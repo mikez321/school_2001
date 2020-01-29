@@ -1,9 +1,10 @@
 class School
-  attr_reader :start_time, :hours_in_school_day, :student_names
+  attr_reader :start_time, :hours_in_school_day, :student_names, :standard_student_names
   def initialize(start_time_parameter, hours_in_school_day_parameter)
     @start_time = start_time_parameter
     @hours_in_school_day = hours_in_school_day_parameter
     @student_names = []
+    @standard_student_names = []
   end
 
   def add_student_name(student_name)
@@ -23,5 +24,11 @@ class School
     return true if hours_in_school_day >= 4
     false
   end
-  
+
+  def standard_student_names
+    student_names.each do |name|
+      @standard_student_names << name.capitalize
+    end
+  end
+
 end

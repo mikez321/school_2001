@@ -19,4 +19,9 @@ class School
     make_time(new_time)
   end
 
+  def full_time
+    return true if hours_in_school_day >= 4
+    false
+  end
+  
 end
